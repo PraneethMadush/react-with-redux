@@ -7,13 +7,12 @@ class App extends Component {
   constructor(){
     super();
   }
+
   render() {
     return (
       <div className="App">
         <img src={logo} className="App-logo" alt="logo" />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <button onClick={()=>this.props.setName("Abeywardana")}>Change Name</button>
         <h1>{this.props.user.name}</h1>
       </div>
     );
@@ -31,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     setName: (name) => {
       dispatch({
         type: "SET_NAME",
-        payloa: name
+        payload: name
       });
     }
   };
